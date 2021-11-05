@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "users": "UserName1",
+    "trip": "6D/4N Fun Tassie Vaca ...",
+    "proof": "bca.jpg",
+    "status": "Pending",
+    "format": "text-orange"
+  },
+  {
+    "id": "2",
+    "users": "UserName2",
+    "trip": "6D/4N Exciting Summer...",
+    "proof": "bca.jpg",
+    "status": "Approve",
+    "format": "text-green"
+  },
+  {
+    "id": "3",
+    "users": "UserName1",
+    "trip": "6D/4N Fun Tassie Vaca ...",
+    "proof": "bca.jpg",
+    "status": "Cancel",
+    "format": "text-red"
+  },
+  {
+    "id": "4",
+    "users": "UserName3",
+    "trip": "6D/4N Wonderful Autum ...",
+    "proof": "bca.jpg",
+    "status": "Approve",
+    "format": "text-green"
+  },
+  {
+    "id": "5",
+    "users": "UserName4",
+    "trip": "6D/4N Magic Tokyo ...",
+    "proof": "bca.jpg",
+    "status": "Approve",
+    "format": "text-green"
+  },
+  {
+    "id": "6",
+    "users": "UserName3",
+    "trip": "6D/4N Labuan Bajo ...",
+    "proof": "bca.jpg",
+    "status": "Pending",
+    "format": "text-orange"
+  },
+  {
+    "id": "7",
+    "users": "UserName4",
+    "trip": "6D/4N Fun Tassie Vaca ...",
+    "proof": "bca.jpg",
+    "status": "Cancel",
+    "format": "text-red"
+  },
+  {
+    "id": "8",
+    "users": "UserName2",
+    "trip": "6D/4N Fun Tassie Vaca ...",
+    "proof": "bca.jpg",
+    "status": "Approve",
+    "format": "text-green"
+  }
+]
