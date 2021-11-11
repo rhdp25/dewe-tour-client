@@ -1,0 +1,21 @@
+footer {
+  position: fixed;
+  bottom: 0 !important;
+  padding: 13px 0;
+  width: 100%;
+  background: #ffaf00;
+}
+
+.text-footer {
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.leaf {
+  position: fixed;
+  bottom: 0 !important;
+  z-index: 8;
+  width: 100px;
+}

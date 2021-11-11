@@ -1,0 +1,45 @@
+.btn-check:active + .btn-primary,
+.btn-check:checked + .btn-primary,
+.btn-primary.active,
+.btn-primary:active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background: none;
+  border: none;
+}
+
+.dropdown-loggedin {
+  padding-right: 0 !important;
+}
+
+.btn-primary {
+  color: transparent !important;
+  background: none !important;
+  border: none !important;
+}
+
+.btn-primary:focus {
+  box-shadow: none !important;
+  border: none !important;
+  background: none !important;
+}
+
+.btn-primary:hover {
+  box-shadow: none !important;
+  border: none !important;
+  background: none !important;
+}
+
+.icon-menu {
+  width: 28px;
+}
+
+.b-menu {
+  margin-left: 20px;
+  color: #242424;
+}
+
+.btn-hide {
+  background: none;
+  border: none;
+}

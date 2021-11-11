@@ -1,0 +1,14 @@
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.palm {
+  width: 100px;
+}
+
+.hibiscus {
+  position: relative;
+  border-radius: 0 5px 0 0;
+  width: 80px;
+}
