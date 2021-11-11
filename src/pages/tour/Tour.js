@@ -16,8 +16,6 @@ const Tour = () => {
     };
 
     const response = await api.get("/trips/" + id, config);
-
-    console.log(response);
     return response.data;
   });
 
