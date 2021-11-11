@@ -21,9 +21,6 @@ const Tour = () => {
     return response.data;
   });
 
-  console.log(id);
-  console.log(api);
-  console.log(trips);
   return (
     <>
       <Container fluid style={{ background: "#F1F1F1" }}>
