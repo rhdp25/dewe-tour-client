@@ -2,6 +2,18 @@ import { createContext, useReducer } from "react";
 
 export const UserContext = createContext();
 
+const dataUser = {
+  data: {
+    fullname: "",
+    email: "@",
+    phone: "#",
+    address: "#",
+    role: "",
+  },
+};
+
+const userOf = JSON.stringify(dataUser);
+
 const initialState = {
   isLoading: true,
   isLogin: false,
@@ -23,6 +35,7 @@ const reducer = (state, action) => {
     case "AUTH_ERROR":
     case "LOGOUT":
       localStorage.removeItem("token");
+      localStorage.setItem("user", userOf);
       return {
         isLoading: false,
         isLogin: false,

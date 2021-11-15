@@ -26,7 +26,6 @@ function LoggedIn() {
     history.push("/");
   };
 
-  console.log(state.user.role);
   if (state.user.role === "admin") {
     return (
       <>

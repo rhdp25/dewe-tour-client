@@ -38,12 +38,13 @@
 }
 
 .qty {
-  width: 50px;
+  max-width: 4em;
   border: hidden !important;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: bold !important;
   color: black !important;
   background: none !important;
+  text-align: center !important;
 }
 
 .price-1 {
@@ -52,4 +53,8 @@
 
 .price-2 {
   float: right;
+}
+
+button {
+  border-radius: 5px !important;
 }

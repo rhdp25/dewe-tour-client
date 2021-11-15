@@ -27,6 +27,11 @@ const ListTour = () => {
           <Link to={`/tour/` + item.id} className="link">
             <Card className="card-trip">
               <Card.Body>
+                <div className="quota">
+                  <b>
+                    {item.quotaLeft} / {item.quota}
+                  </b>
+                </div>
                 <Image className="img-trip mb-3" src={item.image[0]} />
                 <h4 className="card-title">{item.title}</h4>
                 <h5 className="price">

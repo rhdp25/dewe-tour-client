@@ -7,7 +7,7 @@ import iconPlace from "../../assets/icons/place.png";
 
 import profilePic from "../../assets/profile/1.png";
 
-const UserProfile = () => {
+const UserProfile = ({ item }) => {
   return (
     <>
       <div className="col-10" style={{ margin: "0 auto" }}>
@@ -27,7 +27,7 @@ const UserProfile = () => {
                 <div className="col-sm-5">
                   <div className="card-body">
                     <h6>
-                      <b>Username</b> <br />
+                      <b>{item.user.fullName}</b> <br />
                       <p>Full Name</p>
                     </h6>
                   </div>
@@ -42,7 +42,7 @@ const UserProfile = () => {
                 <div className="col-sm-5">
                   <div className="card-body">
                     <h6>
-                      <b>someone@mail.com</b> <br />
+                      <b>{item.user.email}</b> <br />
                       <p>Email</p>
                     </h6>
                   </div>
@@ -57,7 +57,7 @@ const UserProfile = () => {
                 <div className="col-sm-5">
                   <div className="card-body">
                     <h6>
-                      <b>0812345678910</b>
+                      <b>{item.user.phone}</b>
                       <br />
                       <p>Mobile Phone</p>
                     </h6>
@@ -73,7 +73,7 @@ const UserProfile = () => {
                 <div className="col-sm-5">
                   <div className="card-body">
                     <h6>
-                      <b>Someplace, Somewhere</b> <br />
+                      <b>{item.user.address}</b> <br />
                       <p>Address</p>
                     </h6>
                   </div>

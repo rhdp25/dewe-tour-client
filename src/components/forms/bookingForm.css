@@ -1,0 +1,58 @@
+.transferProof {
+  width: 150px;
+  border: none !important;
+  border-radius: 5px;
+}
+
+.here {
+  color: rgb(2, 2, 170) !important;
+  background: none;
+  border: none;
+}
+
+.mr--5 {
+  margin-right: 60px;
+}
+
+.mr--4 {
+  margin-right: 56px;
+}
+
+.badge-info {
+  background-color: #2957f12f !important;
+  border-radius: 5px;
+}
+
+.text-primary {
+  color: #0730b4 !important;
+}
+
+.badge-danger {
+  background-color: #ff67672f;
+  border-radius: 5px;
+}
+
+.badge-warning {
+  background-color: #fff5672f;
+  border-radius: 5px;
+}
+
+.badge-success {
+  background-color: #2ae4593b;
+  border-radius: 5px;
+}
+
+.mb-10 {
+  margin-top: 155px;
+}
+
+.pay {
+  padding: 10px 80px 10px 80px;
+}
+
+.hidden {
+  display: none;
+}
+.pointer {
+  cursor: pointer;
+}

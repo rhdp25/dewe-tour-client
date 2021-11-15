@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Col, Container, Image, Row, Table } from "react-bootstrap";
 
 import logoDW from "../../assets/logo_dark.png";
-import transferProof from "../../assets/tranfer/bca.png";
+import transferProof from "../../assets/transfer/bca.png";
 
 const PaymentWaiting = () => {
   return (

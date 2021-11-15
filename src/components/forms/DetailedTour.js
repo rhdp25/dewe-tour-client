@@ -1,9 +1,8 @@
 import "./detailedTour.css";
 import { Button, Container, Form, Image } from "react-bootstrap";
 
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { UserContext } from "../../context/userContext";
 
 import iconHotel from "../../assets/icons/hotel.png";
 import iconPlane from "../../assets/icons/plane.png";
@@ -12,6 +11,7 @@ import iconTime from "../../assets/icons/time.png";
 import iconCalendar from "../../assets/icons/calendar.png";
 
 import convertRupiah from "rupiah-format";
+import moment from "moment";
 
 import { useMutation } from "react-query";
 import { API } from "../../config/api";
@@ -19,6 +19,7 @@ import { API } from "../../config/api";
 const DetailedTour = ({ item }) => {
   let api = API();
   let history = useHistory();
+  let users = JSON.parse(localStorage.getItem("user"));
 
   const [count, setCount] = useState(1);
   const increment = () => {
@@ -28,22 +29,19 @@ const DetailedTour = ({ item }) => {
     setCount(count <= 1 ? count : count - 1);
   };
 
-  const [state] = useContext(UserContext);
-
   let totalCount = item.price * count;
   let status = "Waiting Payment";
-  let attachment = "";
+  let dumyAttachment = "";
 
-  const handleBuy = useMutation(async () => {
+  const handleBooking = useMutation(async () => {
     try {
       const data = {
         counterQty: count,
         total: item.price * count,
         status: status,
-        attachment: attachment,
         tripId: item.id,
-        userId: state.user.id,
         country: item.country.name,
+        attachment: dumyAttachment,
       };
 
       console.log(data);
@@ -55,14 +53,14 @@ const DetailedTour = ({ item }) => {
       const config = {
         method: "POST",
         headers: {
-          Authorization: "Basic " + localStorage.token,
+          Authorization: "Bearer " + localStorage.token,
           "Content-type": "application/json",
         },
         body,
       };
 
       // Insert transaction data
-      await api.post("/transaction", config);
+      await api.post("/transactions", config);
 
       history.push("/payment");
     } catch (error) {
@@ -119,7 +117,9 @@ const DetailedTour = ({ item }) => {
             <div className="item-2">
               <img className="icon-info" src={iconTime} alt="img" />
               <h5 className="title-info">
-                <b>{item.day}</b>
+                <b>
+                  {item.day} day {item.night} night
+                </b>
               </h5>
             </div>
           </div>
@@ -128,7 +128,7 @@ const DetailedTour = ({ item }) => {
             <div className="item-2">
               <img className="icon-info" src={iconCalendar} alt="img" />
               <h5 className="title-info">
-                <b>{item.dateTrip}</b>
+                <b>{moment(item.dateTrip).format("DD MMM YYYY")}</b>
               </h5>
             </div>
           </div>
@@ -138,19 +138,21 @@ const DetailedTour = ({ item }) => {
         </h5>
         <p className="mb-5">{item.description}</p>
         <div className="mb-20">
-          <div className="price-1 mt-2">
-            <h3>
-              <b>{convertRupiah.convert(item.price)} / Person</b>
-            </h3>
-          </div>
-          <div className="d-flex justify-content-end">
-            <Button variant="warning" onClick={decrement}>
-              <b> - </b>
-            </Button>
-            <Form.Control className="qty" type="text" value={count} readOnly />
-            <Button variant="warning" onClick={increment}>
-              <b>+</b>
-            </Button>
+          <div className="d-flex justify-content-between">
+            <div className="price-1 mt-2">
+              <h3>
+                <b>{convertRupiah.convert(item.price)} / person</b>
+              </h3>
+            </div>
+            <div className="d-flex justify-content-end">
+              <Button variant="warning" onClick={decrement}>
+                <b> - </b>
+              </Button>
+              <Form.Control className="qty" type="text" value={count} readOnly />
+              <Button variant="warning" onClick={increment}>
+                <b>+</b>
+              </Button>
+            </div>
           </div>
           <hr />
           <div className="d-flex justify-content-between">
@@ -163,15 +165,25 @@ const DetailedTour = ({ item }) => {
           </div>
           <hr />
           <div className="d-flex justify-content-end mt-4">
-            {!state.isLogin ? (
-              <Button variant="warning">
-                <b>PLEASE LOGIN</b>
-              </Button>
-            ) : (
-              <Button variant="warning" onClick={() => handleBuy.mutate()}>
-                <b>BOOK NOW</b>
-              </Button>
-            )}
+            {(() => {
+              if (item.quotaMinus === "0") {
+                return (
+                  <h3>
+                    <span class="badge bg-warning text-dark p-3">Maaf Kuota Telah Habis</span>
+                  </h3>
+                );
+              } else if (users.data.role === "admin") {
+                return <Button hidden></Button>;
+              } else if (users.data.role === "") {
+                return <Button hidden></Button>;
+              } else {
+                return (
+                  <Button variant="warning" onClick={() => handleBooking.mutate()}>
+                    <b>BOOK NOW</b>
+                  </Button>
+                );
+              }
+            })()}
           </div>
         </div>
       </Container>

@@ -14,6 +14,7 @@ import Profile from "./profile/Profile";
 import IncomeTrip from "./admin/IncomeTrip";
 import ListTransaction from "./admin/ListTransaction";
 import AddTrip from "./admin/AddTrip";
+import AddCountry from "./admin/AddCountry";
 
 import { API } from "../config/api";
 
@@ -97,6 +98,7 @@ function App() {
               <Route exact path="/trip/" component={IncomeTrip} />
               <Route exact path="/transaction/" component={ListTransaction} />
               <Route exact path="/add-trip/" component={AddTrip} />
+              <Route exact path="/add-country/" component={AddCountry} />
             </PrivateRoute>
           </Switch>
           <Footer />
