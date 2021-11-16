@@ -173,31 +173,38 @@ const BookingForm = ({ item }) => {
             <table className="table table-striped">
               <thead>
                 <tr>
-                  <th scope="col">Full Name</th>
-                  <th scope="col">Address</th>
-                  <th scope="col">Phone</th>
-                  <th scope="col">Gender</th>
+                  <th>No</th>
+                  <th>Full Name</th>
+                  <th>Gender</th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td>1</td>
                   <td>{item.user.fullName}</td>
-                  <td>{item.user.address}</td>
-                  <td>{item.user.phone}</td>
                   <td>{item.user.gender}</td>
-                  <td>
-                    <b className="mr4">Qty :</b>
-                    <b> {item.counterQty}</b>
-                  </td>
+                  <td>{item.user.phone}</td>
+                  <td>{item.user.address}</td>
+                  <td>Qty</td>
+                  <td>:</td>
+                  <td>{item.counterQty}</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Total</td>
+                  <td>:</td>
+                  <td className="text-red">{"  " + convertRupiah.convert(item.total)}</td>
                 </tr>
               </tbody>
             </table>
-            <div className="d-flex justify-content-end mb-0 mt-4">
-              <h5>
-                <b className="mr5">Total :</b>
-                <b className="text-danger">{"  " + convertRupiah.convert(item.total)}</b>
-              </h5>
-            </div>
           </div>
         </div>
         <div className="mt-4 d-flex justify-content-end">
@@ -207,27 +214,21 @@ const BookingForm = ({ item }) => {
         </div>
       </Container>
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            <b>Confirm</b>
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="text-center">
           <Form onSubmit={(e) => handleSubmit.mutate(e)}>
             <input type="file" id="files" hidden name="attachment" onChange={handleChange} />
             <input type="text" className="hidden" name="status" value="Waiting Approve" />
-            <h5 className="text-center">Your payment will be confirmed whithin 1 X 24 hours</h5>
-            <h5 className="text-center">
-              To see orders clik
-              <Button className="here" type="submit">
-                <b>Here</b>
-              </Button>
-              thank you
-            </h5>
+            Your payment will be confirmed within 1 x 24 hours.
+            <br />
+            To see orders click
+            <Button className="here" type="submit">
+              Here
+            </Button>
+            thank you
           </Form>
         </Modal.Body>
       </Modal>
-      <div className="mb-10"></div>
+      <div className="mb-5"></div>
     </>
   );
 };

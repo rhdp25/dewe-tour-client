@@ -4,7 +4,7 @@ import ListIncomingTransaction from "../../components/lists/ListIncomingTransact
 
 const ListTransaction = () => {
   return (
-    <Container fluid style={{ background: "#F1F1F1" }}>
+    <Container fluid style={{ background: "#F1F1F1", minHeight: "100vh" }}>
       <Row>
         <ListIncomingTransaction />
       </Row>

@@ -86,7 +86,7 @@ function LoggedIn() {
               </Link>
             </Dropdown.Item>
             <Dropdown.Item>
-              <Link to="/payment-wait">
+              <Link to="/payment">
                 <button className="btn-hide">
                   <Image className="icon-menu" src={menuPay} />
                   <b className="b-menu">Pay</b>

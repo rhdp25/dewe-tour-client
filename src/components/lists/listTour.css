@@ -12,6 +12,7 @@
 
 .img-trip {
   width: 280px;
+  height: 200px;
   border-radius: 5px;
 }
 
@@ -48,4 +49,13 @@
 .link {
   text-decoration: none;
   color: #272727;
+}
+
+.quota {
+  position: absolute;
+  background-color: white;
+  width: 70px;
+  margin: 30px 0 0 215px;
+  padding: 8px;
+  border-radius: 5px 0 0 5px;
 }

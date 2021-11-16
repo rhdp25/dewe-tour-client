@@ -29,7 +29,7 @@ const Profile = () => {
   return (
     <>
       {state.isLogin ? (
-        <Container fluid style={{ background: "#F1F1F1" }}>
+        <Container fluid style={{ background: "#F1F1F1", minHeight: "100vh" }}>
           <Row>
             {checkAuth && <UserProfile item={checkAuth} />}
             <HistoryTrip />

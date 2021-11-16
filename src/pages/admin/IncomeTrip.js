@@ -5,7 +5,7 @@ import ListTour from "../../components/lists/ListTour";
 const IncomeTrip = () => {
   return (
     <>
-      <Container fluid style={{ background: "#F1F1F1" }}>
+      <Container fluid style={{ background: "#F1F1F1", minHeight: "100vh" }}>
         <Row>
           <BtnAddTrip />
           <ListTour />

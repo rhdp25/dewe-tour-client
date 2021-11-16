@@ -9,7 +9,6 @@ import Footer from "../components/footer/Footer";
 import Home from "./home/Home";
 import Tour from "./tour/Tour";
 import Payment from "./payment/Payment";
-import PaymentWaiting from "./payment/PaymentWaiting";
 import Profile from "./profile/Profile";
 import IncomeTrip from "./admin/IncomeTrip";
 import ListTransaction from "./admin/ListTransaction";
@@ -92,7 +91,6 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/tour/:id" component={Tour} />
             <Route exact path="/payment/" component={Payment} />
-            <Route exact path="/payment-wait/" component={PaymentWaiting} />
             <Route exact path="/profile/" component={Profile} />
             <PrivateRoute>
               <Route exact path="/trip/" component={IncomeTrip} />

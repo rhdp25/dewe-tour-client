@@ -128,24 +128,28 @@ const HistoryTrip = ({ item }) => {
                   <Table striped>
                     <thead>
                       <tr>
+                        <th>No</th>
                         <th>Full Name</th>
                         <th>Gender</th>
                         <th>Phone</th>
-                        <th></th>
+                        <th>Address</th>
                         <th></th>
                         <th></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
+                        <td>1</td>
                         <td>{item.user.fullName}</td>
                         <td>{item.user.gender}</td>
                         <td>{item.user.phone}</td>
+                        <td>{item.user.address}</td>
                         <td>Qty</td>
                         <td>:</td>
                         <td>{item.counterQty}</td>
                       </tr>
                       <tr>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>

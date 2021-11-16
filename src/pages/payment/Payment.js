@@ -22,11 +22,13 @@ const Payment = () => {
 
   return (
     <>
-      <Container fluid style={{ background: "#F1F1F1" }}>
+      <Container fluid style={{ background: "#F1F1F1", minHeight: "100vh" }}>
         <Row>
-          {transactions?.map((item, index) => (
-            <BookingForm item={item} key={index} />
-          ))}
+          <div className="col-11" style={{ margin: "0 auto" }}>
+            {transactions?.map((item, index) => (
+              <BookingForm item={item} key={index} />
+            ))}
+          </div>
         </Row>
       </Container>
     </>

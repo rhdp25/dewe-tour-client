@@ -21,7 +21,7 @@ const Tour = () => {
 
   return (
     <>
-      <Container fluid style={{ background: "#F1F1F1" }}>
+      <Container fluid style={{ background: "#F1F1F1", minHeight: "100vh" }}>
         <Row>{trips && <DetailedTour item={trips} />}</Row>
       </Container>
     </>

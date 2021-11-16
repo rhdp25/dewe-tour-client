@@ -162,7 +162,7 @@ const PaymentApproval = ({ item, index }) => {
             </Col>
             <Col className="col">
               <Row>
-                <Image src={item.attachment[0]} />
+                <Image src={"http://localhost:5000/uploads/" + item.attachment} />
               </Row>
               <Row>
                 <span className="text-center text-gray">upload payment proof</span>
@@ -177,7 +177,7 @@ const PaymentApproval = ({ item, index }) => {
                   <th>Full Name</th>
                   <th>Gender</th>
                   <th>Phone</th>
-                  <th></th>
+                  <th>Address</th>
                   <th></th>
                   <th></th>
                 </tr>
@@ -188,6 +188,7 @@ const PaymentApproval = ({ item, index }) => {
                   <td>{item.user.fullName}</td>
                   <td>{item.user.gender}</td>
                   <td>{item.user.phone}</td>
+                  <td>{item.user.address}</td>
                   <td>Qty</td>
                   <td>:</td>
                   <td>{item.counterQty}</td>
@@ -197,9 +198,10 @@ const PaymentApproval = ({ item, index }) => {
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                   <td>Total</td>
                   <td>:</td>
-                  <td className="text-red"> {"  " + convertRupiah.convert(item.total)}</td>
+                  <td className="text-red">{"  " + convertRupiah.convert(item.total)}</td>
                 </tr>
               </tbody>
             </Table>
